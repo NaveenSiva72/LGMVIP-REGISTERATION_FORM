@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Enrollment Form</title>
+    <link rel="stylesheet" href="mystylesheet.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="head">
+    <!-- Header of the page -->
+    <div class="jumbotron text-center" id="header">
+      <p id="heading">👨🏻‍🎓 STUDENT ENROLLMENT FORM 👩🏻‍🎓</p>
+    </div>
+
+    <!-- Container containing from and display table -->
+    <div class="container">
+      <!-- Braking the page into Row containg columns -->
+      <div class="row">
+        <div class="col-sm-4">
+          <!-- Column-1 contains Form -->
+          <form class="form">
+            <div class="panel panel-primary">
+              <div class="panel-body">
+                <!-- Form taking inputs -->
+                <div class="form-group row">
+                  <label for="name" class="col-sm-4"> <b>Name</b> </label>
+                  <input
+                    type="text"
+                    class="form-control col-sm-8 name-field"
+                    id="name"
+                    title="Enter Name"
+                  />
+                  <span class="message"></span>
+                </div>
+                <div class="form-group row">
+                  <label for="email" class="col-sm-4"><b>Email </b></label>
+                  <input
+                    type="email"
+                    class="form-control col-sm-8 email-field"
+                    id="email"
+                    title="Enter Email Id"
+                  />
+                  <span class="message" style="font-size: small"></span>
+                </div>
+                <div class="form-group row">
+                  <label for="website" class="col-sm-4"> <b>Website</b> </label>
+                  <input
+                    type="url"
+                    class="form-control col-sm-8"
+                    id="website"
+                    title="Enter Website URL"
+                  />
+                  <span class="message"></span>
+                </div>
+                <div class="form-group row">
+                  <label for="imageLink" class="col-sm-4">
+                    <b>Image Link</b>
+                  </label>
+                  <input
+                    type="url"
+                    class="form-control col-sm-8"
+                    id="imageLink"
+                    title="Enter URL of Image"
+                  />
+                  <span class="message"></span>
+                </div>
+                <div class="form-group row">
+                  <label for="gender" class="col-sm-4"> <b>Gender</b> </label>
+                  <!-- Radio Keys for gender -->
+                  <div id="gender">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="genderchoice"
+                        value="Male"
+                        id="male"
+                        checked
+                      />
+                      <label class="form-check-label" for="male"> Male </label>
+                    </div>
+
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="genderchoice"
+                        value="Female"
+                        id="female"
+                      />
+                      <label class="form-check-label" for="female">
+                        Female</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- Checkbox for skills -->
+                <div class="form-group row">
+                  <label for="Skills" class="col-sm-3"> <b>Skills</b> </label>
+                  <label class="checkbox-inline col-sm-3">
+                    <input
+                      checked
+                      type="checkbox"
+                      name="skillchoice"
+                      id="java"
+                      value="Java"
+                    />
+                    Java
+                  </label>
+                  <label class="checkbox-inline col-sm-3">
+                    <input
+                      type="checkbox"
+                      name="skillchoice"
+                      id="html"
+                      value="HTML"
+                    />
+                    HTML
+                  </label>
+                  <label class="checkbox-inline col-sm-3">
+                    <input
+                      type="checkbox"
+                      name="skillchoice"
+                      id="css"
+                      value="CSS"
+                    />
+                    CSS
+                  </label>
+                </div>
+              </div>
+              <!-- Buttons for the forms -->
+              <div class="panel-footer">
+                <div class="row">
+                  <div class="col-xs-4">
+                    <button
+                      type="button"
+                      id="updateButton"
+                      class="btn btn-primary"
+                      onclick="productUpdate()"
+                      title="Click to enroll student"
+                    >
+                      Click to Enroll
+                    </button>
+                  </div>
+                  <div class="offset-1 col-xs-4">
+                    <button
+                      type="button"
+                      id="clearButton"
+                      class="btn btn-danger"
+                      onclick="formClear()"
+                      title="Click To clear all form fields"
+                    >
+                      Clear
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <p id="errorMsg"><br /></p>
+            </div>
+          </form>
+        </div>
+        <!-- Second column containg the partition of the page -->
+        <div class="col-sm-3 d-none d-sm-block">
+          <p id="vertical"></p>
+        </div>
+        <!-- Third column containing The display Table -->
+        <div class="col-sm-5">
+          <h2 id="displayTable">Enrolled Students</h2>
+          <table
+            id="productTable"
+            class="table table-bordered table-condensed table-stripped"
+            title="Enrolled Students"
+          >
+            <thead id="OutputTable">
+              <tr>
+                <th id="description">Description</th>
+                <th id="image">Image</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="javascript.js"></script>
+  </body>
+</html>

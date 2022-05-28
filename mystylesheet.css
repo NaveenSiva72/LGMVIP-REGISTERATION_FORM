@@ -1,0 +1,75 @@
+#head {
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  padding: 4%;
+}
+#header {
+  background-color: midnightblue;
+  padding: 10px;
+  color: rgb(211, 119, 119);
+}
+#heading {
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+#productTable {
+  border-width: 2px;
+  border-color: rgb(4, 4, 4);
+  padding: 0px;
+}
+#displayTable {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+#OutputTable {
+  background-color: rgb(73, 172, 225);
+  color: rgb(20, 20, 20);
+}
+#vertical {
+  border-left: 3px solid #070808;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  text-align: right;
+}
+/* Makes Changes in the odd and even row entries */
+tr:nth-child(even) {
+  background-color: rgb(73, 172, 225);
+  padding: 0 0 0 0;
+  font-size: 13px;
+}
+tr:nth-child(odd) {
+  padding: 0 0 0 0;
+  font-size: 13px;
+}
+
+#image {
+  width: 150px;
+}
+
+#newData {
+  border-color: rgb(13, 14, 13);
+}
+/* Color of the error message */
+#errorMsg {
+  color: rgb(224, 15, 15);
+}
+
+* {
+  outline: none;
+}
+
+.message {
+  display: inline-block;
+}
+
+.email-field:focus:invalid + .message::after {
+  color: red;
+  content: "Invalid email address";
+}
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #0f0f10;
+}
